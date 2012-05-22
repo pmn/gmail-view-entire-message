@@ -47,6 +47,4 @@
     }
 
     timer();
-    //document.addEventListener('DOMNodeInserted', timer);
-
 })();
