@@ -1,6 +1,6 @@
 {
     "name" : "GMail view entire message",
-    "version" : "0.1",
+    "version" : "0.2",
     "description" : "Display a 'view entire message' link at the top of long emails in GMail",
     "content_scripts" : [
 	{
@@ -10,7 +10,7 @@
 	    ],
 	    "js" : ["contentscript.js"],
 	    "run_at" : "document_idle",
-	    "all_frames" : false
+	    "all_frames" : true
 	}
     ],
     "permissions" : [
@@ -18,5 +18,5 @@
 	"http://mail.google.com/*",
 	"https://mail.google.com/*"
     ],
-    "manifest_version" : 1
+    "manifest_version" : 2
 }

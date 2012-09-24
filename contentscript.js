@@ -1,23 +1,13 @@
 (function () {
-
-    function checkForCanvasFrame() {
-	// Check to see if the message frame has been rendered
-	canvas = window.frames['canvas_frame'];
-	if (canvas && canvas.contentDocument) {
-	    // Determine if this message has been clipped by gmail
-	    testForClippedMessage(canvas.contentDocument);
-	}
-    }
-
     function testForClippedMessage(contentDoc){
 	// Google assigns the class 'vem' to the "View entire message" link
 	// at the bottom of clipped emails.
 	var vem = contentDoc.getElementsByClassName("vem");
 
 	if (vem.length > 0) {
-	    // Content contains the "View entire message" link, add the shortcut up top.
-	    insertViewMessageLink(contentDoc, vem[0]);
-	}
+			    // Content contains the "View entire message" link, add the shortcut up top.
+			    insertViewMessageLink(contentDoc, vem[0]);
+			}
     }
 
     function insertViewMessageLink(contentDoc, url){
@@ -42,8 +32,8 @@
     }
 
     function timer(){
-	checkForCanvasFrame();
-	setTimeout(timer, 250);
+			testForClippedMessage(window.document);
+			setTimeout(timer, 250);
     }
 
     timer();
